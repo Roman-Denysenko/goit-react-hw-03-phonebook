@@ -1,0 +1,12 @@
+.button {
+  padding: 5px;
+  background-color: rgb(255, 211, 203);
+  font-weight: 500;
+  padding: 2px 5px;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+.item {
+  font-weight: 500;
+}
