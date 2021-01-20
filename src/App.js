@@ -15,6 +15,25 @@ class App extends Component {
     filter: '',
   };
 
+  componentDidMount() {
+    const contactsFromLocalStorage = JSON.parse(
+      localStorage.getItem('contacts'),
+    );
+
+    if (contactsFromLocalStorage) {
+      this.setState({ contacts: contactsFromLocalStorage });
+    }
+  }
+
+  componentDidUpdate(prevState) {
+    const nextContacts = this.state.contacts;
+    const prevContacts = prevState.contacts;
+
+    if (prevContacts !== nextContacts) {
+      localStorage.setItem('contacts', JSON.stringify(nextContacts));
+    }
+  }
+
   handleTakeSubmitForm = data => {
     this.setState({ contacts: data });
   };
